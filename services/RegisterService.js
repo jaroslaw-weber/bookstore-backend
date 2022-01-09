@@ -73,6 +73,9 @@ class RegisterService {
     return this.dbService.insert(password, passwordTable);
   }
 
+  /** 
+   * @param {RegisterRequest} request
+   */
   async createUser(request) {
     let insertUser = new DbUser();
     insertUser.username = request.username;
