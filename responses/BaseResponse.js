@@ -1,9 +1,9 @@
+
+
 /** common part of all responses */
 class BaseResponse
 {
-	/**
-	 * response error to display. empty on success
-	 * @type string */
+	/** @type Error */
 	error
 
 	constructor()
@@ -12,4 +12,7 @@ class BaseResponse
 	}
 }
 
+exports.BaseResponse = BaseResponse
+
 module.exports = BaseResponse
+
