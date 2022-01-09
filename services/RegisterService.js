@@ -10,7 +10,7 @@ const DbSession = require("../schema/DbSession");
 class RegisterService {
   /**
    * @param { RegisterRequest } request
-   * @returns { RegisterResponse | ErrorResponse }
+   * @returns {Promise<RegisterResponse | ErrorResponse> }
    */
   async register(request) {
     if (request.username == undefined)

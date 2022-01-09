@@ -1,6 +1,9 @@
 var express = require("express");
+const { send } = require("express/lib/response");
+const = require("../responses/ErrorResponse");
 const LoginService = require("../services/LoginService");
 const RegisterService = require("../services/RegisterService");
+const {  RouteHelper } = require("./RouteHelper");
 var router = express.Router();
 
 /* GET home page. */
@@ -16,8 +19,8 @@ router.post("/login", function (req, res, next) {
 
 router.post("/register", function (req, res, next) {
   let service = new RegisterService()
-  let response = service.register(req.body)
-  res.send(response);
+  let response = await service.register(req.body)
+  new RouteHelper().send(res,response)
 });
 
 module.exports = router;
