@@ -1,5 +1,5 @@
 
-const BaseResponse = require("./BaseResponse");
+const {BaseResponse }= require("./BaseResponse");
 const DbUser = require("../schema/DbUser");
 
 class RegisterResponse extends BaseResponse {

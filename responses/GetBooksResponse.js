@@ -1,5 +1,5 @@
 let Book = require("../data/Book");
-const BaseResponse = require("./BaseResponse");
+const {BaseResponse} = require("./BaseResponse");
 
 class GetBooksResponse extends BaseResponse {
   /** @type Book[] */
