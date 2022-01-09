@@ -13,7 +13,7 @@ const { v4: uuidv4 } = require("uuid");
 class LoginService {
   dbService = new DatabaseService();
   passwordService = new PasswordService();
-  userTable;
+  
   /**
    * @param { LoginRequest } request
    * @returns { Promise<LoginResponse | ErrorResponse>}
@@ -52,6 +52,7 @@ class LoginService {
    * @param {LoginRequest} request
    */
   async checkPassword(user, request) {
+    /** @type DbPassword */
     let password = await knex
       .select("*")
       .from(passwordTable)

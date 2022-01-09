@@ -6,17 +6,17 @@ const { RouteHelper } = require("./RouteHelper");
 var router = express.Router();
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
   res.render("index", { title: "Express" });
 });
 
-router.post("/login", async function (req, res, next) {
+router.post("/login", async function (req, res) {
   let service = new LoginService();
   let response = await service.login(req.body);
   res.send(response);
 });
 
-router.post("/register", async function (req, res, next) {
+router.post("/register", async function (req, res) {
   let service = new RegisterService();
   let response = await service.register(req.body);
   new RouteHelper().send(res, response);

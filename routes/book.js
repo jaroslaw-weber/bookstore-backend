@@ -5,16 +5,16 @@ let  GetBooksResponse  = require('../responses/GetBooksResponse');
 
 var router = express.Router();
 
-router.get('/:id', function(req, res, next) {
+router.get('/:id', function(req, res) {
 
 	let response = new GetBookResponse()
 	response.mock()
-	response.book.id = req.params.id
+	response.book.id = Number(req.params.id)
 	res.send(response);
 });
 
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 
 	let response = new GetBooksResponse()
 	response.mock()

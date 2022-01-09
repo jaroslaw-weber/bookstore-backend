@@ -3,8 +3,6 @@
 /** common part of all responses */
 class BaseResponse
 {
-	/** @type Error */
-	error
 
 	constructor()
 	{

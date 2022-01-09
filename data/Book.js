@@ -3,7 +3,7 @@ class Book{
 	id
 	/** @type string */
 	title
-	/** @type description */
+	/** @type string */
 	description
 	
     constructor()

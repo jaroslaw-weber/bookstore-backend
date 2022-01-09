@@ -11,7 +11,6 @@ class GetBooksResponse extends BaseResponse {
 
   mock() {
     this.books = [];
-    this.error = "test";
     {
       let book = new Book();
       book.mock();
