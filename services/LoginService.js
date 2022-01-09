@@ -31,7 +31,7 @@ class LoginService {
 
       /** @type DbPassword */
       let passwordOk = await this.checkPassword(user, request);
-      
+
       if (!passwordOk) return new ErrorResponse("invalid password");
 
       let session = await this.createSession(user);
