@@ -1,3 +1,4 @@
+//@ts-check
 const RegisterRequest = require("../requests/RegisterRequest");
 const ErrorResponse = require("../responses/ErrorResponse");
 const RegisterResponse = require("../responses/RegisterResponse");
@@ -67,8 +68,6 @@ class RegisterService {
     let password = new DbPassword();
     password.userId = user.id;
     password.password = await this.passwordService.hash(request.password);
-
-    console.log(password.length);
 
     return this.dbService.insert(password, passwordTable);
   }

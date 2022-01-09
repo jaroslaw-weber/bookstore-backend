@@ -1,3 +1,4 @@
+//@ts-check
 const knex = require("knex")({
   client: "pg",
   connection: {
@@ -36,19 +37,6 @@ class DatabaseService {
     return insertedRows[0]
   }
 
-  /**
-   * @template T
-   * @param {string} id
-   * @returns {Promise<T> }
-   */
-  async get(id) {
-    //todo postresql
-    return something;
-  }
-
-  async query(queryText) {
-    return something;
-  }
 }
 
 module.exports ={ DatabaseService, knex}

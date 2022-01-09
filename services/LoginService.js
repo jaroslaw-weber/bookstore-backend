@@ -1,3 +1,4 @@
+//@ts-check
 const LoginResponse = require("../responses/LoginResponse");
 const LoginRequest = require("../requests/LoginRequest");
 const ErrorResponse = require("../responses/ErrorResponse");
@@ -15,7 +16,7 @@ class LoginService {
   userTable;
   /**
    * @param { LoginRequest } request
-   * @returns { LoginResponse | ErrorResponse}
+   * @returns { Promise<LoginResponse | ErrorResponse>}
    */
   async login(request) {
     if (request.username == undefined)
@@ -29,7 +30,6 @@ class LoginService {
         return new ErrorResponse("user not found");
       }
 
-      /** @type DbPassword */
       let passwordOk = await this.checkPassword(user, request);
 
       if (!passwordOk) return new ErrorResponse("invalid password");

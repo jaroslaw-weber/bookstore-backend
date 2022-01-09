@@ -1,3 +1,4 @@
+//@ts-check
 const bcrypt = require("bcrypt");
 
 class PasswordService {
