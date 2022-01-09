@@ -1,5 +1,7 @@
 class DbSession {
-	/** @type string */
+	/** 
+	 * session id
+	 * @type string */
 	id;
 	/** @type string */
 	userId;

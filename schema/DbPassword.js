@@ -1,9 +1,9 @@
 class DbPassword {
 
-	/** @type string */
-	userId;
-
-
+	/**
+	 *  @type string */
+	username
+	
 	/**
 	 * hashed password
 	 * @type string */
